@@ -25,7 +25,7 @@ public class JobScraper {
             String company = jobElement.select("p.company").text();
             String location = jobElement.select("p.location").text();
 
-            jobs.add(new Job(title, company, location));
+           jobs.add(new Job(title, company, location, "https://example.com", "Sample job description", "Test HTML"));
         }
 
         return jobs;
