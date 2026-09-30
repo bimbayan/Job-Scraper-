@@ -3,4 +3,10 @@ package com.jobscraper.job_scraper_api;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface JobRepository extends JpaRepository<Job, Long> {
+
+    boolean existsByTitleAndCompanyAndLocation(
+        String title,
+        String company,
+        String location
+    );
 }
