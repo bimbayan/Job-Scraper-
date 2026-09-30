@@ -1,4 +1,4 @@
-package com.jobscraper;
+package com.jobscraper.job_scraper_api;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,6 +1,19 @@
-package com.jobscraper;
+package com.jobscraper.job_scraper_api;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "jobs")
 
 public class Job {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
     private String company;
@@ -8,6 +21,9 @@ public class Job {
     private String url;
     private String description;
     private String source;
+
+    public Job() {
+    }
 
     public Job(String title, String company, String location,
                String url, String description, String source) {
