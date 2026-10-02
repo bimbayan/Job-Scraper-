@@ -9,10 +9,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class JobScraper {
+public class TestHTMLSource implements JobSource {
 
-    public static List<Job> scrapeJobs() throws Exception {
-
+    @Override
+    public List<Job> scrapeJobs() throws Exception {
         File file = new File("../test.html");
         Document document = Jsoup.parse(file, "UTF-8");
 
@@ -33,7 +33,8 @@ public class JobScraper {
 
     public static void main(String[] args) throws Exception {
 
-        List<Job> jobs = scrapeJobs();
+        JobSource jobSource = new TestHTMLSource();
+        List<Job> jobs = jobSource.scrapeJobs();
 
         for (Job job : jobs) {
             job.printJob();
